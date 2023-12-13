@@ -1,6 +1,18 @@
-let nome = prompt('Digite seu nome: ');
-console.log('Olá, ' + nome);
-let num1 = parseFloat(prompt('Digite um número qualquer: '));
-const num2 = 10;
-console.log(`A soma de ${num1} e ${num2} é ${num1 + num2}`);
-alert('Olhe o console para obter os resultados.');
+function entradaPeso() {
+  const peso = Number(prompt('Digite seu peso em KG(75): '));
+  return peso;
+}
+
+function entradaAltura() {
+  const altura = Number(prompt('Digite sua altura em metros(1.83):'));
+  return altura;
+}
+
+const calculaIMC = (peso, altura) => {
+  const imc = peso / (altura * altura);
+  return imc.toFixed(2);
+};
+
+const exibeResultado = (imc) => console.log(`Seu imc é de: ${imc}`);
+
+exibeResultado(calculaIMC(entradaPeso(), entradaAltura()));
